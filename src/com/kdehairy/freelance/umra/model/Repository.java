@@ -61,6 +61,9 @@ public class Repository extends SQLiteOpenHelper {
 				if (in_create_stream != null) {
 					in_create_stream.close();
 				}
+				if (in_insert_stream != null) {
+					in_insert_stream.close();
+				}
 			} catch (IOException e) {
 			}
 		}

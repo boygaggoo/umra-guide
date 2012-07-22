@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<style name="Theme.Umra" parent="Theme.Sherlock.Light">
-	</style>
+    <style name="Theme.Umra" parent="Theme.Sherlock.Light">
+        <item name="actionBarStyle">@style/Widget.Umra.ActionBar</item>
+		<item name="android:actionBarStyle">@style/Widget.Umra.ActionBar</item>
+		<item name="android:windowBackground">@color/window_bkgrnd</item>
+		<item name="android:textColor">#666</item>
+    </style>
+
+    <style name="Widget.Umra.ActionBar" parent="Widget.Sherlock.Light.ActionBar">
+        <item name="android:background">@drawable/actionbar</item>
+        <item name="background">@drawable/actionbar</item>
+        <item name="titleTextStyle">@style/Widget.Umra.ActionBar.Title</item>
+		<item name="android:titleTextStyle">@style/Widget.Umra.ActionBar.Title</item>
+        <item name="android:height">45dp</item>
+        <item name="height">45dp</item>
+    </style>
+    
+    <style name="Widget.Umra.ActionBar.Title" parent="TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textColor">#CEE5F5</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:shadowColor">#700</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1.5</item>
+    </style>
+
 </resources>
