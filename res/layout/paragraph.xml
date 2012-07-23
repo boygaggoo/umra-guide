@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:clickable="false"
+    android:focusable="false" >
+
+    <com.kdehairy.widgets.DecoratedTextView
+        android:id="@+id/paragraph_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/ContentTextSize" />
+
+</FrameLayout>

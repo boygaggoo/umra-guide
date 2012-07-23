@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.kdehairy.freelance.umra.model.Toc;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -18,8 +20,8 @@ public class Repository extends SQLiteOpenHelper {
 
 	private static final String NAME = "data.sqlite";
 	private static final int VERSION = 1;
-	private static final String CREATE_SCRIPT = "create_script.sql";
-	private static final String INSERT_SCRIPT = "insert_script.sql";
+	private static final String CREATE_SCRIPT = "create_database.sql";
+	private static final String INSERT_SCRIPT = "insert_data.sql";
 
 	private final Context mContext;
 	private static Repository mInstance = null;
@@ -74,7 +76,7 @@ public class Repository extends SQLiteOpenHelper {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	@Override
 	public void onOpen(SQLiteDatabase database) {
 		super.onOpen(database);
@@ -83,7 +85,35 @@ public class Repository extends SQLiteOpenHelper {
 			database.execSQL("PRAGMA foreign_keys = ON;");
 		}
 	}
-	
+
+	public Toc findTocById(int id) {
+		Cursor cursor = null;
+		SQLiteDatabase db = null;
+		Toc toc = null;
+		try {
+			db = getReadableDatabase();
+			String where = Toc.ID  + " = ?";
+			String[] args = new String[]{Integer.toString(id)};
+			cursor = db.query(Toc.TABLE, null, where, args, null, null, null);
+			if (cursor != null && cursor.getCount() > 0) {
+				cursor.moveToNext();
+				String title = cursor.getString(cursor
+						.getColumnIndex(Toc.TITLE));
+				toc = new Toc(id, title);
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		} finally {
+			if (db  != null && db.isOpen()) {
+				db.close();
+			}
+			if (cursor != null && !cursor.isClosed()) {
+				cursor.close();
+			}
+		}
+		return toc;
+	}
+
 	public List<Toc> getTocs() {
 		Cursor cursor = null;
 		SQLiteDatabase db = null;
@@ -96,12 +126,13 @@ public class Repository extends SQLiteOpenHelper {
 				tocs = new ArrayList<Toc>(count);
 				while (cursor.moveToNext()) {
 					int id = cursor.getInt(cursor.getColumnIndex(Toc.ID));
-					String title = cursor.getString(cursor.getColumnIndex(Toc.TITLE));
+					String title = cursor.getString(cursor
+							.getColumnIndex(Toc.TITLE));
 					tocs.add(new Toc(id, title));
 				}
 			}
 		} catch (SQLiteException e) {
-			
+
 		} finally {
 			if (db != null && db.isOpen()) {
 				db.close();
@@ -110,7 +141,7 @@ public class Repository extends SQLiteOpenHelper {
 				cursor.close();
 			}
 		}
-		
+
 		List<Toc> immutableList = null;
 		if (tocs != null) {
 			immutableList = Collections.unmodifiableList(tocs);

@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="6"
-    android:padding="5dp" >
+    android:padding="5dp"
+    android:weightSum="6" >
 
     <RelativeLayout
         android:id="@+id/umra_1"
@@ -12,8 +12,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/toc_background"
-        android:focusable="true"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true" >
 
         <ImageView
             android:id="@+id/ornament_img_1"
@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/ornament_img_1"
-            android:text="@string/toc_1" />
+            android:text="@string/toc_1"
+            android:textSize="@dimen/TocTextSize" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -46,8 +47,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/toc_background"
-        android:focusable="true"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true" >
 
         <ImageView
             android:id="@+id/ornament_img_2"
@@ -63,7 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/ornament_img_2"
-            android:text="@string/toc_2" />
+            android:text="@string/toc_2"
+            android:textSize="@dimen/TocTextSize" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -80,8 +82,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/toc_background"
-        android:focusable="true"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true" >
 
         <ImageView
             android:id="@+id/ornament_img_3"
@@ -97,7 +99,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/ornament_img_3"
-            android:text="@string/toc_3" />
+            android:text="@string/toc_3"
+            android:textSize="@dimen/TocTextSize" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -114,8 +117,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/toc_background"
-        android:focusable="true"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true" >
 
         <ImageView
             android:id="@+id/ornament_img_4"
@@ -131,7 +134,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/ornament_img_4"
-            android:text="@string/toc_4" />
+            android:text="@string/toc_4"
+            android:textSize="@dimen/TocTextSize" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -148,8 +152,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/toc_background"
-        android:focusable="true"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true" >
 
         <ImageView
             android:id="@+id/ornament_img_5"
@@ -165,7 +169,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/ornament_img_5"
-            android:text="@string/toc_5" />
+            android:text="@string/toc_5"
+            android:textSize="@dimen/TocTextSize" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -182,8 +187,8 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/toc_background"
-        android:focusable="true"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true" >
 
         <ImageView
             android:id="@+id/ornament_img_6"
@@ -199,7 +204,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@id/ornament_img_6"
-            android:text="@string/toc_6" />
+            android:text="@string/toc_6"
+            android:textSize="@dimen/TocTextSize" />
     </RelativeLayout>
 
 </LinearLayout>

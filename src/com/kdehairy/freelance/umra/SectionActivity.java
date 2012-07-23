@@ -1,48 +1,52 @@
 package com.kdehairy.freelance.umra;
 
-import java.util.ArrayList;
-
 import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
-import com.kdehairy.freelance.umra.model.Repository;
+import com.actionbarsherlock.view.MenuItem;
+import com.kdehairy.freelance.umra.adapters.ParagraphAdapter;
 import com.kdehairy.freelance.umra.model.Toc;
 import com.kdehairy.widgets.DecoratedTextView;
 
-public class TOCActivity extends SherlockActivity implements OnClickListener {
+public class SectionActivity extends SherlockListActivity {
 
-	private ArrayList<RelativeLayout> mTocViews;
+	public static final String EXTRA_TOC = "com.kdehairy.extra.toc";
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.toc);
+	public boolean onCreateOptionsMenu(Menu menu) {
+		MenuInflater inflater = getSupportMenuInflater();
+		inflater.inflate(R.menu.section, menu);
+		return true;
+	}
 
-		mTocViews = new ArrayList<RelativeLayout>(6);
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_1));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_2));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_3));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_4));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_5));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_6));
-		
-		//wire the click listeners
-		int i = 1;
-		for (RelativeLayout l : mTocViews) {
-			l.setTag(i++);
-			l.setOnClickListener(this);
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean is_processed = false;
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent intent = new Intent(this, TOCActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			is_processed = true;
+		default:
+			is_processed = super.onOptionsItemSelected(item);
 		}
+		return is_processed;
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
 		// create the actionbar custom view
 		RelativeLayout layout = new RelativeLayout(this);
@@ -67,22 +71,21 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 		getSupportActionBar().setDisplayOptions(
 				ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
 		getSupportActionBar().setCustomView(layout);
+		// enable the home button on the actionbar
+		getSupportActionBar().setHomeButtonEnabled(true);
+
+		ListView ls = getListView();
+		ls.setDivider(null);
+		ls.setDividerHeight(0);
+
+		Toc toc = (Toc) getIntent().getParcelableExtra(EXTRA_TOC);
+		if (toc == null) {
+			throw new NullPointerException("Toc cannot be null");
+		}
+		ParagraphAdapter adapter = new ParagraphAdapter(this, toc);
+		ls.setAdapter(adapter);
+		// ls.setSelector(android.R.color.transparent);
+		// ls.setFocusableInTouchMode(false);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getSupportMenuInflater();
-		inflater.inflate(R.menu.toc, menu);
-		return true;
-	}
-
-	@Override
-	public void onClick(View v) {
-		int id = (Integer) v.getTag();
-		Repository repo = Repository.getInstance(this.getApplicationContext());
-		Toc toc = repo.findTocById(id);
-		Intent intent = new Intent(this, SectionActivity.class);
-		intent.putExtra(SectionActivity.EXTRA_TOC, toc);
-		startActivity(intent);
-	}
 }
