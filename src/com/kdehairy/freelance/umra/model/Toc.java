@@ -93,4 +93,8 @@ public class Toc extends ORMObject implements Parcelable {
 		return immutableList;
 	}
 
+	public String getTitle() {
+		return mTitle;
+	}
+
 }

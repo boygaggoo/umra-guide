@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 import com.kdehairy.freelance.umra.model.Repository;
 import com.kdehairy.freelance.umra.model.Toc;
 import com.kdehairy.widgets.DecoratedTextView;
@@ -65,7 +67,7 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 
 		// attach the custom view to the actionbar
 		getSupportActionBar().setDisplayOptions(
-				ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
+				ActionBar.DISPLAY_SHOW_CUSTOM);
 		getSupportActionBar().setCustomView(layout);
 	}
 
@@ -74,6 +76,27 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 		MenuInflater inflater = getSupportMenuInflater();
 		inflater.inflate(R.menu.toc, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean is_processed = false;
+		Intent intent;
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			intent = new Intent(this, TOCActivity.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+			is_processed = true;
+			break;
+		case R.id.menu_info:
+			intent = new Intent(this, InfoActivity.class);
+			startActivity(intent);
+			break;
+		default:
+			is_processed = super.onOptionsItemSelected(item);
+		}
+		return is_processed;
 	}
 
 	@Override

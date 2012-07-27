@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <ImageView
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:src="@drawable/umra_app" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/share_app"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/share"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="Share App"
+                android:textSize="22sp"
+                android:typeface="serif"
+                android:background="@drawable/toc_background"
+                android:clickable="true" />
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/separator" />
+
+            <TextView
+                android:id="@+id/review_app"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/review"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="Review on google Play"
+                android:textSize="22sp"
+                android:typeface="serif"
+                android:background="@drawable/toc_background"
+                android:clickable="true"
+                android:onClick="rateTheAppOnClick" />
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/separator" />
+
+            <TextView
+                android:id="@+id/like"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/facebook"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="Like us on Facebook"
+                android:textSize="22sp"
+                android:typeface="serif"
+                android:background="@drawable/toc_background"
+                android:clickable="true" />
+            <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/separator" />
+
+            <TextView
+                android:id="@+id/visit_site"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/website"
+                android:drawablePadding="5dp"
+                android:padding="5dp"
+                android:text="Visit Our website"
+                android:textSize="22sp"
+                android:typeface="serif"
+                android:background="@drawable/toc_background"
+                android:clickable="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="Developer: Khalid Eldehairy" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:text="UX designer: Mohamed Elbarisy" />
+    </LinearLayout>
+
+</ScrollView>

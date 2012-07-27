@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup.LayoutParams;
@@ -47,6 +48,11 @@ public class SectionActivity extends SherlockListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Toc toc = (Toc) getIntent().getParcelableExtra(EXTRA_TOC);
+		if (toc == null) {
+			throw new NullPointerException("Toc cannot be null");
+		}
 
 		// create the actionbar custom view
 		RelativeLayout layout = new RelativeLayout(this);
@@ -55,9 +61,11 @@ public class SectionActivity extends SherlockListActivity {
 		layout.setLayoutParams(lp);
 		layout.setGravity(Gravity.CENTER);
 		DecoratedTextView textView = new DecoratedTextView(this);
-		textView.setText(R.string.app_name);
+		textView.setText(toc.getTitle());
 		textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 		textView.setTextColor(0xffCEE5F5);
+		textView.setSingleLine(true);
+		textView.setEllipsize(TextUtils.TruncateAt.END);
 		Drawable dl = getResources().getDrawable(R.drawable.ornament_l);
 		dl.setBounds(0, 0, 14, 33);
 		Drawable dr = getResources().getDrawable(R.drawable.ornament_r);
@@ -69,7 +77,7 @@ public class SectionActivity extends SherlockListActivity {
 
 		// attach the custom view to the actionbar
 		getSupportActionBar().setDisplayOptions(
-				ActionBar.DISPLAY_SHOW_CUSTOM | ActionBar.DISPLAY_SHOW_HOME);
+				ActionBar.DISPLAY_SHOW_CUSTOM);
 		getSupportActionBar().setCustomView(layout);
 		// enable the home button on the actionbar
 		getSupportActionBar().setHomeButtonEnabled(true);
@@ -77,11 +85,9 @@ public class SectionActivity extends SherlockListActivity {
 		ListView ls = getListView();
 		ls.setDivider(null);
 		ls.setDividerHeight(0);
+		ls.setCacheColorHint(getResources().getColor(R.color.window_bkgrnd));
 
-		Toc toc = (Toc) getIntent().getParcelableExtra(EXTRA_TOC);
-		if (toc == null) {
-			throw new NullPointerException("Toc cannot be null");
-		}
+		getSupportActionBar().setTitle(toc.getTitle());
 		ParagraphAdapter adapter = new ParagraphAdapter(this, toc);
 		ls.setAdapter(adapter);
 		// ls.setSelector(android.R.color.transparent);
