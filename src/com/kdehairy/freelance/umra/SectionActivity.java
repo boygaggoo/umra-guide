@@ -22,6 +22,8 @@ import com.kdehairy.widgets.DecoratedTextView;
 public class SectionActivity extends SherlockListActivity {
 
 	public static final String EXTRA_TOC = "com.kdehairy.extra.toc";
+	
+	private Toc mTopic;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -33,12 +35,20 @@ public class SectionActivity extends SherlockListActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		boolean is_processed = false;
+		Intent intent;
 		switch (item.getItemId()) {
 		case android.R.id.home:
-			Intent intent = new Intent(this, TOCActivity.class);
+			intent = new Intent(this, TOCActivity.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 			is_processed = true;
+			break;
+		case R.id.menu_prayer:
+			intent = new Intent(this, PrayerActivity.class);
+			intent.putExtra(PrayerActivity.EXTRA_TOPIC, mTopic);
+			startActivity(intent);
+			is_processed = true;
+			break;
 		default:
 			is_processed = super.onOptionsItemSelected(item);
 		}
@@ -53,6 +63,7 @@ public class SectionActivity extends SherlockListActivity {
 		if (toc == null) {
 			throw new NullPointerException("Toc cannot be null");
 		}
+		mTopic = toc;
 
 		// create the actionbar custom view
 		RelativeLayout layout = new RelativeLayout(this);
@@ -61,7 +72,7 @@ public class SectionActivity extends SherlockListActivity {
 		layout.setLayoutParams(lp);
 		layout.setGravity(Gravity.CENTER);
 		DecoratedTextView textView = new DecoratedTextView(this);
-		textView.setText(toc.getTitle());
+		textView.setText(mTopic.getTitle());
 		textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 		textView.setTextColor(0xffCEE5F5);
 		textView.setSingleLine(true);

@@ -52,6 +52,45 @@ public class Toc extends ORMObject implements Parcelable {
 			return new Toc[size];
 		}
 	};
+	
+	public List<Prayer> getPrayers(Context context) {
+		Cursor cursor = null;
+		SQLiteDatabase db = null;
+		ArrayList<Prayer> prayers = null;
+		try {
+			Repository repo = Repository.getInstance(context);
+			db = repo.getReadableDatabase();
+			String where = Prayer.TOC_ID + " = ?";
+			String args[] = new String[] {Integer.toString(this.getId())};
+			String orderBy = Prayer.ID + " ASC";
+			cursor = db.query(Prayer.TABLE, null, where, args, null, null, orderBy);
+			int count = 0;
+			if (cursor != null && (count = cursor.getCount()) > 0) {
+				prayers = new ArrayList<Prayer>(count);
+				while (cursor.moveToNext()) {
+					int id = cursor.getInt(cursor.getColumnIndex(Prayer.ID));
+					String title = cursor.getString(cursor.getColumnIndex(Prayer.TITLE));
+					String content = cursor.getString(cursor.getColumnIndex(Prayer.CONTENT));
+					prayers.add(new Prayer(id, title, content));
+				}
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		} finally {
+			if (db != null && db.isOpen()) {
+				db.close();
+			}
+			if (cursor != null && !cursor.isClosed()) {
+				cursor.close();
+			}
+		}
+		
+		List<Prayer> immutableList = null;
+		if (prayers != null) {
+			immutableList = Collections.unmodifiableList(prayers);
+		}
+		return immutableList;
+	}
 
 	public List<Paragraph> getParagraphs(Context context) {
 		Cursor cursor = null;

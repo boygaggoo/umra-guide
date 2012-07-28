@@ -26,6 +26,10 @@
         <activity
             android:name=".InfoActivity"
             android:label="@string/menu_info" />
+        <activity
+            android:name=".PrayerActivity"
+            android:label="@string/menu_info"
+            android:theme="@style/Theme.Umra.Dialog" />
     </application>
 
 </manifest>
