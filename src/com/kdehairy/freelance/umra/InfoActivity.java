@@ -44,27 +44,45 @@ public class InfoActivity extends SherlockActivity {
 		// attach the custom view to the actionbar
 		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		getSupportActionBar().setCustomView(layout);
-		
+
 		findViewById(R.id.review_app).setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse("market://details?id=com.kdehairy.freelance.umra"));
+				intent.setData(Uri
+						.parse("market://details?id=com.kdehairy.freelance.umra"));
 				startActivity(intent);
 			}
-			
+
 		});
-		
+
 		findViewById(R.id.visit_site).setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse("http://kdehairy.com"));
+				intent.setData(Uri.parse("http://umra.vacau.com/"));
 				startActivity(intent);
 			}
-			
+
+		});
+
+		findViewById(R.id.share_app).setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+				intent.setType("text/plain");
+				intent.putExtra(android.content.Intent.EXTRA_TITLE,
+						getString(R.string.app_name));
+				intent.putExtra(android.content.Intent.EXTRA_SUBJECT,
+						getString(R.string.app_name));
+				intent.putExtra(android.content.Intent.EXTRA_TEXT,
+						"http://play.google.com/store/apps/details?id=com.kdehairy.freelance.umra");
+				startActivity(Intent.createChooser(intent, "Share via"));
+			}
+
 		});
 	}
 
