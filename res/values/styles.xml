@@ -9,13 +9,15 @@
         <item name="vpiCirclePageIndicatorStyle">@style/CirclePageIndicator</item>
     </style>
 
-    <style name="Theme.Umra.Dialog" parent="Theme.Sherlock.Light.Dialog">
+    <style name="Theme.Umra.Prayer" parent="Theme.Sherlock.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowTitleStyle">@style/DialogTitle</item>
-    </style>
-
-    <style name="DialogTitle" parent="Widget">
-        <item name="android:visibility">gone</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
     <style name="Widget.Umra.ActionBar" parent="Widget.Sherlock.Light.ActionBar">

@@ -3,6 +3,7 @@ package com.kdehairy.freelance.umra;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.kdehairy.freelance.umra.adapters.PrayerFragmentAdapter;
 import com.kdehairy.freelance.umra.model.Toc;
@@ -19,8 +20,8 @@ public class PrayerActivity extends SherlockFragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.prayer);
 		
+		setContentView(R.layout.prayer);
 
 		Toc topic = (Toc) getIntent().getParcelableExtra(EXTRA_TOPIC);
 		if (topic == null) {

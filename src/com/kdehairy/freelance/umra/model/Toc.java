@@ -53,6 +53,36 @@ public class Toc extends ORMObject implements Parcelable {
 		}
 	};
 	
+	public int getPrayerCount(Context context) {
+		int count = 0;
+		SQLiteDatabase db = null;
+		Cursor cursor = null;
+		try {
+			Repository repo = Repository.getInstance(context);
+			db = repo.getReadableDatabase();
+			StringBuilder bldr = new StringBuilder("SELECT COUNT(")
+			.append(Prayer.ID + ") AS prayer_count FROM ")
+			.append(Prayer.TABLE)
+			.append(" WHERE " + Prayer.TOC_ID + " = " + getId())
+			.append(" GROUP BY " + Prayer.TOC_ID);
+			cursor = db.rawQuery(bldr.toString(), null);
+			if (cursor != null && cursor.getCount() > 0) {
+				cursor.moveToNext();
+				count = cursor.getInt(cursor.getColumnIndex("prayer_count"));
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		} finally {
+			if (db != null && db.isOpen()) {
+				db.close();
+			}
+			if (cursor != null && !cursor.isClosed()) {
+				cursor.close();
+			}
+		}
+		return count;
+	}
+	
 	public List<Prayer> getPrayers(Context context) {
 		Cursor cursor = null;
 		SQLiteDatabase db = null;

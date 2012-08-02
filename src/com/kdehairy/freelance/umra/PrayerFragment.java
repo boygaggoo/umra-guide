@@ -38,25 +38,13 @@ public class PrayerFragment extends SherlockFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		TextView text = new TextView(getActivity());
-        text.setGravity(Gravity.CENTER);
-        text.setText(mPrayer.getTitle());
-        text.setTextSize(20 * getResources().getDisplayMetrics().density);
-        text.setPadding(20, 20, 20, 20);
-        text.setBackgroundColor(0xFFFFFFFF);
+		View returnedOne = getActivity().getLayoutInflater().inflate(R.layout.prayer_item, null);
+		TextView title = (TextView) returnedOne.findViewById(R.id.title);
+		title.setText(mPrayer.getTitle());
+		TextView content = (TextView) returnedOne.findViewById(R.id.content);
+		content.setText(mPrayer.getContent());
 
-        LinearLayout layout = new LinearLayout(getActivity());
-        LayoutParams param = new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
-        param.bottomMargin = 50;
-        param.rightMargin = 50;
-        param.topMargin = 50;
-        param.leftMargin = 50;
-        layout.setLayoutParams(param);
-        layout.setGravity(Gravity.CENTER);
-        
-        layout.addView(text);
-
-        return layout;
+        return returnedOne;
 	}
 
 	@Override

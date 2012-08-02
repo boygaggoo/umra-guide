@@ -28,8 +28,8 @@
             android:label="@string/menu_info" />
         <activity
             android:name=".PrayerActivity"
-            android:label="@string/menu_info"
-            android:theme="@style/Theme.Umra.Dialog" />
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Umra.Prayer" />
     </application>
 
 </manifest>

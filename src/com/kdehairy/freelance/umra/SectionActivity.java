@@ -22,13 +22,17 @@ import com.kdehairy.widgets.DecoratedTextView;
 public class SectionActivity extends SherlockListActivity {
 
 	public static final String EXTRA_TOC = "com.kdehairy.extra.toc";
+	private static final int MENU_PRAYER = 1;
 	
 	private Toc mTopic;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater inflater = getSupportMenuInflater();
-		inflater.inflate(R.menu.section, menu);
+		if (mTopic.getPrayerCount(this) > 0) {
+			MenuItem item = menu.add(Menu.NONE, MENU_PRAYER, Menu.NONE, "prayer");
+			item.setIcon(getResources().getDrawable(R.drawable.doaa));
+			item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		}
 		return true;
 	}
 
@@ -43,7 +47,7 @@ public class SectionActivity extends SherlockListActivity {
 			startActivity(intent);
 			is_processed = true;
 			break;
-		case R.id.menu_prayer:
+		case MENU_PRAYER:
 			intent = new Intent(this, PrayerActivity.class);
 			intent.putExtra(PrayerActivity.EXTRA_TOPIC, mTopic);
 			startActivity(intent);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/prayer_background"
+        android:clickable="false"
+        android:focusable="false"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <com.kdehairy.widgets.DecoratedTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:drawableLeft="@drawable/ornament_l"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/ornament_r"
+            android:gravity="center_vertical"
+            android:textColor="#0099CC"
+            android:textSize="18sp" />
+        
+        <ImageView 
+            android:src="@drawable/horizontal_line"
+            android:layout_width="fill_parent"
+            android:layout_height="3dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <com.kdehairy.widgets.DecoratedTextView
+                android:id="@+id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingMultiplier="1.5"
+                android:textSize="@dimen/ContentTextSize" />
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>
