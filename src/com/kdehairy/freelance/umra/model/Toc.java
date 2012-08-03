@@ -83,7 +83,7 @@ public class Toc extends ORMObject implements Parcelable {
 		return count;
 	}
 	
-	public List<Prayer> getPrayers(Context context) {
+	public List<Prayer> getPrayers(Context context, String order) {
 		Cursor cursor = null;
 		SQLiteDatabase db = null;
 		ArrayList<Prayer> prayers = null;
@@ -92,7 +92,8 @@ public class Toc extends ORMObject implements Parcelable {
 			db = repo.getReadableDatabase();
 			String where = Prayer.TOC_ID + " = ?";
 			String args[] = new String[] {Integer.toString(this.getId())};
-			String orderBy = Prayer.ID + " ASC";
+			order = (order != null) ? order : "ASC";
+			String orderBy = Prayer.ID + " " + order;
 			cursor = db.query(Prayer.TABLE, null, where, args, null, null, orderBy);
 			int count = 0;
 			if (cursor != null && (count = cursor.getCount()) > 0) {

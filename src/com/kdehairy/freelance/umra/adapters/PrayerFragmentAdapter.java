@@ -17,7 +17,7 @@ public class PrayerFragmentAdapter extends FragmentPagerAdapter {
 
 	public PrayerFragmentAdapter(FragmentManager fm, Context context, Toc topic) {
 		super(fm);
-		mPrayers = topic.getPrayers(context);
+		mPrayers = topic.getPrayers(context, "DESC");
 	}
 
 	@Override

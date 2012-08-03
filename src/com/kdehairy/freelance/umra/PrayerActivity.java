@@ -30,9 +30,11 @@ public class PrayerActivity extends SherlockFragmentActivity {
 				getSupportFragmentManager(), this, topic);
 		mPager = (ViewPager) findViewById(R.id.pager);
 		mPager.setAdapter(adapter);
+		mPager.setCurrentItem(adapter.getCount()-1);
 		
 		mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
 		mIndicator.setViewPager(mPager);
+		mIndicator.setCurrentItem(adapter.getCount()-1);
 		
 	}
 
