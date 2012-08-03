@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <com.kdehairy.widgets.DecoratedTextView
+        android:id="@+id/custom_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ornament_l"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/ornament_r"
+        android:text="@string/app_name"
+        android:textColor="#ffCEE5F5"
+        android:textSize="18sp" />
+
+</RelativeLayout>

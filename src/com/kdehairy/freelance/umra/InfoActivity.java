@@ -2,28 +2,22 @@ package com.kdehairy.freelance.umra;
 
 import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockActivity;
-import com.kdehairy.widgets.DecoratedTextView;
 
 public class InfoActivity extends SherlockActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.info);
 
 		// create the actionbar custom view
-		RelativeLayout layout = new RelativeLayout(this);
+		/*RelativeLayout layout = new RelativeLayout(this);
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		layout.setLayoutParams(lp);
@@ -43,7 +37,14 @@ public class InfoActivity extends SherlockActivity {
 
 		// attach the custom view to the actionbar
 		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-		getSupportActionBar().setCustomView(layout);
+		getSupportActionBar().setCustomView(layout);*/
+		
+		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		View customView = getSupportActionBar().getCustomView();
+		TextView title = (TextView) customView.findViewById(R.id.custom_view_title);
+		title.setText(R.string.menu_info);
+		
+		setContentView(R.layout.info);
 
 		findViewById(R.id.review_app).setOnClickListener(new OnClickListener() {
 

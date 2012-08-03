@@ -2,22 +2,16 @@ package com.kdehairy.freelance.umra;
 
 import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.ViewGroup.LayoutParams;
+import android.view.View;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.kdehairy.freelance.umra.adapters.ParagraphAdapter;
 import com.kdehairy.freelance.umra.model.Toc;
-import com.kdehairy.widgets.DecoratedTextView;
 
 public class SectionActivity extends SherlockListActivity {
 
@@ -70,7 +64,7 @@ public class SectionActivity extends SherlockListActivity {
 		mTopic = toc;
 
 		// create the actionbar custom view
-		RelativeLayout layout = new RelativeLayout(this);
+		/*RelativeLayout layout = new RelativeLayout(this);
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		layout.setLayoutParams(lp);
@@ -93,9 +87,13 @@ public class SectionActivity extends SherlockListActivity {
 		// attach the custom view to the actionbar
 		getSupportActionBar().setDisplayOptions(
 				ActionBar.DISPLAY_SHOW_CUSTOM);
-		getSupportActionBar().setCustomView(layout);
-		// enable the home button on the actionbar
-		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setCustomView(layout);*/
+		
+
+		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		View customView = getSupportActionBar().getCustomView();
+		TextView title = (TextView) customView.findViewById(R.id.custom_view_title);
+		title.setText(mTopic.getTitle());
 
 		ListView ls = getListView();
 		ls.setDivider(null);

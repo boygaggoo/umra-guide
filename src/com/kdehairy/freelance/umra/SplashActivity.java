@@ -13,10 +13,11 @@ public class SplashActivity extends SherlockActivity {
 	private static final long DELAY = 3000;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
+		
+		//getSupportActionBar().hide();
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash);
-		getSupportActionBar().hide();
-		
 		Timer timer = new Timer();
 		timer.schedule(new TimerTask() {
 
@@ -29,5 +30,5 @@ public class SplashActivity extends SherlockActivity {
 			
 		}, DELAY);
 	}
-
+	
 }

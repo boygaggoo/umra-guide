@@ -52,8 +52,7 @@
                 android:textSize="22sp"
                 android:typeface="serif"
                 android:background="@drawable/toc_background"
-                android:clickable="true"
-                android:onClick="rateTheAppOnClick" />
+                android:clickable="true" />
             <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

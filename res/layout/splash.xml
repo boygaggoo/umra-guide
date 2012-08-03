@@ -5,7 +5,7 @@
     
     <ImageView 
         android:src="@drawable/splash"
-        android:scaleType="center"
+        android:scaleType="centerInside"
         android:layout_centerInParent="true"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />

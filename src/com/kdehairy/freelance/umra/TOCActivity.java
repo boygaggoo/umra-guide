@@ -4,15 +4,11 @@ import java.util.ArrayList;
 
 import android.app.ActionBar;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
@@ -20,7 +16,6 @@ import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.kdehairy.freelance.umra.model.Repository;
 import com.kdehairy.freelance.umra.model.Toc;
-import com.kdehairy.widgets.DecoratedTextView;
 
 public class TOCActivity extends SherlockActivity implements OnClickListener {
 
@@ -28,26 +23,9 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.toc);
-
-		mTocViews = new ArrayList<RelativeLayout>(6);
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_1));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_2));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_3));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_4));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_5));
-		mTocViews.add((RelativeLayout) findViewById(R.id.umra_6));
 		
-		//wire the click listeners
-		int i = 1;
-		for (RelativeLayout l : mTocViews) {
-			l.setTag(i++);
-			l.setOnClickListener(this);
-		}
-
 		// create the actionbar custom view
-		RelativeLayout layout = new RelativeLayout(this);
+		/*RelativeLayout layout = new RelativeLayout(this);
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		layout.setLayoutParams(lp);
@@ -63,12 +41,31 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 		textView.setCompoundDrawables(dl, null, dr, null);
 		textView.setCompoundDrawablePadding(5);
 		textView.setShadowLayer(1.5f, 1, 1, 0xFF000000);
-		layout.addView(textView);
+		layout.addView(textView);*/
 
 		// attach the custom view to the actionbar
-		getSupportActionBar().setDisplayOptions(
-				ActionBar.DISPLAY_SHOW_CUSTOM);
-		getSupportActionBar().setCustomView(layout);
+		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		View customView = getSupportActionBar().getCustomView();
+		TextView title = (TextView) customView.findViewById(R.id.custom_view_title);
+		title.setText(R.string.app_name);
+		//getSupportActionBar().setCustomView(layout);
+		setContentView(R.layout.toc);
+
+		mTocViews = new ArrayList<RelativeLayout>(6);
+		mTocViews.add((RelativeLayout) findViewById(R.id.umra_1));
+		mTocViews.add((RelativeLayout) findViewById(R.id.umra_2));
+		mTocViews.add((RelativeLayout) findViewById(R.id.umra_3));
+		mTocViews.add((RelativeLayout) findViewById(R.id.umra_4));
+		mTocViews.add((RelativeLayout) findViewById(R.id.umra_5));
+		mTocViews.add((RelativeLayout) findViewById(R.id.umra_6));
+
+		// wire the click listeners
+		int i = 1;
+		for (RelativeLayout l : mTocViews) {
+			l.setTag(i++);
+			l.setOnClickListener(this);
+		}
+		super.onCreate(savedInstanceState);
 	}
 
 	@Override
@@ -77,7 +74,7 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 		inflater.inflate(R.menu.toc, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		boolean is_processed = false;

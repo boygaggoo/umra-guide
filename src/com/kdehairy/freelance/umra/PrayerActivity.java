@@ -3,7 +3,6 @@ package com.kdehairy.freelance.umra;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.kdehairy.freelance.umra.adapters.PrayerFragmentAdapter;
 import com.kdehairy.freelance.umra.model.Toc;
