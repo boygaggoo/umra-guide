@@ -26,6 +26,8 @@ public class SectionActivity extends SherlockListActivity {
 			MenuItem item = menu.add(Menu.NONE, MENU_PRAYER, Menu.NONE, "prayer");
 			item.setIcon(getResources().getDrawable(R.drawable.doaa));
 			item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+		} else {
+			getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		}
 		return true;
 	}
@@ -90,7 +92,7 @@ public class SectionActivity extends SherlockListActivity {
 		getSupportActionBar().setCustomView(layout);*/
 		
 
-		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		//getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		View customView = getSupportActionBar().getCustomView();
 		TextView title = (TextView) customView.findViewById(R.id.custom_view_title);
 		title.setText(mTopic.getTitle());

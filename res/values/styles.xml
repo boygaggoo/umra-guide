@@ -11,8 +11,8 @@
         
         <item name="vpiCirclePageIndicatorStyle">@style/CirclePageIndicator</item>
         
-        <item name="android:displayOptions">showCustom</item>
-        <item name="displayOptions">showCustom</item>
+        <item name="android:displayOptions">showHome|useLogo|showCustom</item>
+        <item name="displayOptions">showHome|useLogo|showCustom</item>
         
         <item name="android:customNavigationLayout">@layout/custom_view</item>
         <item name="customNavigationLayout">@layout/custom_view</item>

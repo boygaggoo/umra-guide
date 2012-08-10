@@ -44,7 +44,7 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 		layout.addView(textView);*/
 
 		// attach the custom view to the actionbar
-		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		//getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		View customView = getSupportActionBar().getCustomView();
 		TextView title = (TextView) customView.findViewById(R.id.custom_view_title);
 		title.setText(R.string.app_name);
