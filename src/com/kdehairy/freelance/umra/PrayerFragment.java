@@ -39,7 +39,7 @@ public class PrayerFragment extends SherlockFragment {
 		TextView title = (TextView) returnedOne.findViewById(R.id.title);
 		title.setText(mPrayer.getTitle());
 		TextView content = (TextView) returnedOne.findViewById(R.id.content);
-		content.setText(mPrayer.getContent());
+		content.setText(unescape(mPrayer.getContent()));
 
         return returnedOne;
 	}
@@ -49,4 +49,8 @@ public class PrayerFragment extends SherlockFragment {
         super.onSaveInstanceState(outState);
         outState.putParcelable(KEY_PRAYER, mPrayer);
     }
+	
+	private String unescape(String content) {
+	    return content.replaceAll("\\\\n", "\\\n");
+	}
 }

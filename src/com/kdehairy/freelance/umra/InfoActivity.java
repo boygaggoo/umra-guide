@@ -63,7 +63,7 @@ public class InfoActivity extends SherlockActivity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse("http://umra.vacau.com/"));
+				intent.setData(Uri.parse("http://alumraguide.com/"));
 				startActivity(intent);
 			}
 
@@ -82,6 +82,17 @@ public class InfoActivity extends SherlockActivity {
 				intent.putExtra(android.content.Intent.EXTRA_TEXT,
 						"http://play.google.com/store/apps/details?id=com.kdehairy.freelance.umra");
 				startActivity(Intent.createChooser(intent, "Share via"));
+			}
+
+		});
+		
+		findViewById(R.id.like).setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse("http://www.facebook.com/pages/%D8%AF%D9%84%D9%8A%D9%84-%D8%A7%D9%84%D8%A7%D9%84%D8%B9%D9%85%D8%B1%D8%A9/345063958907732"));
+				startActivity(intent);
 			}
 
 		});
