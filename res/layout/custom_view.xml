@@ -15,6 +15,6 @@
         android:textColor="#ffCEE5F5"
         android:textSize="18sp"
         android:ellipsize="end"
-        android:lines="1" />
+        android:singleLine="true" />
 
 </RelativeLayout>

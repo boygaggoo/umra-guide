@@ -39,7 +39,7 @@ public class InfoActivity extends SherlockActivity {
 		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		getSupportActionBar().setCustomView(layout);*/
 		
-		//getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
 		View customView = getSupportActionBar().getCustomView();
 		TextView title = (TextView) customView.findViewById(R.id.custom_view_title);
 		title.setText(R.string.menu_info);
