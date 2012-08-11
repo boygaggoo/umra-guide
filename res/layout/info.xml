@@ -96,14 +96,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:text="Developer: Khalid Eldehairy" />
+            android:text="Developer: Khalid Eldehairy"
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:text="UX designer: Mohamed Elbarisy" />
+            android:text="UX designer: Mohamed Elbarisy"
+            android:visibility="gone" />
     </LinearLayout>
 
 </ScrollView>
