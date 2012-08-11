@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">دليل العمره</string>
-    <string name="toc_1">آداب العمره</string>
+    <string name="app_name">دليل العمرة</string>
+    <string name="toc_1">آداب العمرة</string>
     <string name="toc_2">اﻹحرام وآدابه</string>
-    <string name="toc_3">الطواف بالكعبه المشرفه</string>
-    <string name="toc_4">السعي بين الصفا والمروه</string>
+    <string name="toc_3">الطواف بالكعبه المشرفة</string>
+    <string name="toc_4">السعي بين الصفا والمروة</string>
     <string name="toc_5">الحلق أو التقصير</string>
-    <string name="toc_6">زيارة المدينه المنوره</string>
-    <string name="menu_info">عنا البرنامج</string>
+    <string name="toc_6">زيارة المدينه المنورة</string>
+    <string name="menu_info">عن البرنامج</string>
     <string name="menu_prayer">الدعاء</string>
-
 </resources>
