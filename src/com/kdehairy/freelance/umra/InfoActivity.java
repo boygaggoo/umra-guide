@@ -22,7 +22,7 @@ public class InfoActivity extends SherlockActivity {
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		layout.setLayoutParams(lp);
 		layout.setGravity(Gravity.CENTER);
-		DecoratedTextView textView = new DecoratedTextView(this);
+		RobotoTextView textView = new RobotoTextView(this);
 		textView.setText(R.string.menu_info);
 		textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 		textView.setTextColor(0xffCEE5F5);

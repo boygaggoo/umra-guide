@@ -7,7 +7,7 @@
     android:clickable="false"
     android:focusable="false" >
 
-    <com.kdehairy.widgets.DecoratedTextView
+    <com.kdehairy.widgets.RobotoTextView
         android:id="@+id/paragraph_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

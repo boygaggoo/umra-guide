@@ -2,7 +2,6 @@ package com.kdehairy.freelance.umra;
 
 import java.util.ArrayList;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +29,7 @@ public class TOCActivity extends SherlockActivity implements OnClickListener {
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 		layout.setLayoutParams(lp);
 		layout.setGravity(Gravity.CENTER);
-		DecoratedTextView textView = new DecoratedTextView(this);
+		RobotoTextView textView = new RobotoTextView(this);
 		textView.setText(R.string.app_name);
 		textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 		textView.setTextColor(0xffCEE5F5);
