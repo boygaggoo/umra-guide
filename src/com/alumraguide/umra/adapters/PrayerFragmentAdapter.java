@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra.adapters;
+package com.alumraguide.umra.adapters;
 
 import java.util.List;
 
@@ -7,9 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.kdehairy.freelance.umra.PrayerFragment;
-import com.kdehairy.freelance.umra.model.Prayer;
-import com.kdehairy.freelance.umra.model.Toc;
+import com.alumraguide.umra.PrayerFragment;
+import com.alumraguide.umra.model.Prayer;
+import com.alumraguide.umra.model.Toc;
 
 public class PrayerFragmentAdapter extends FragmentPagerAdapter {
 	

@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra;
+package com.alumraguide.umra;
 
 import java.util.Timer;
 import java.util.TimerTask;

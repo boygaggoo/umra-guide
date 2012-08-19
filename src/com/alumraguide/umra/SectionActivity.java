@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra;
+package com.alumraguide.umra;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
-import com.kdehairy.freelance.umra.adapters.ParagraphAdapter;
-import com.kdehairy.freelance.umra.model.Toc;
+import com.alumraguide.umra.adapters.ParagraphAdapter;
+import com.alumraguide.umra.model.Toc;
 
 public class SectionActivity extends SherlockListActivity {
 

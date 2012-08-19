@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra.adapters;
+package com.alumraguide.umra.adapters;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.kdehairy.freelance.umra.R;
-import com.kdehairy.freelance.umra.model.Paragraph;
-import com.kdehairy.freelance.umra.model.Toc;
+import com.alumraguide.umra.R;
+import com.alumraguide.umra.model.Paragraph;
+import com.alumraguide.umra.model.Toc;
 
 public class ParagraphAdapter extends BaseAdapter {
 	private final Context mContext;

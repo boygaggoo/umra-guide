@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra;
+package com.alumraguide.umra;
 
 import android.app.ActionBar;
 import android.content.Intent;
@@ -52,7 +52,7 @@ public class InfoActivity extends SherlockActivity {
 			public void onClick(View v) {
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.setData(Uri
-						.parse("market://details?id=com.kdehairy.freelance.umra"));
+						.parse("market://details?id=com.alumraguide.umra"));
 				startActivity(intent);
 			}
 
@@ -80,7 +80,7 @@ public class InfoActivity extends SherlockActivity {
 				intent.putExtra(android.content.Intent.EXTRA_SUBJECT,
 						getString(R.string.app_name));
 				intent.putExtra(android.content.Intent.EXTRA_TEXT,
-						"http://play.google.com/store/apps/details?id=com.kdehairy.freelance.umra");
+						"http://play.google.com/store/apps/details?id=com.alumraguide.umra");
 				startActivity(Intent.createChooser(intent, "Share via"));
 			}
 

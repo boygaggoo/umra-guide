@@ -1,11 +1,11 @@
-package com.kdehairy.freelance.umra;
+package com.alumraguide.umra;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.actionbarsherlock.app.SherlockFragmentActivity;
-import com.kdehairy.freelance.umra.adapters.PrayerFragmentAdapter;
-import com.kdehairy.freelance.umra.model.Toc;
+import com.alumraguide.umra.adapters.PrayerFragmentAdapter;
+import com.alumraguide.umra.model.Toc;
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.PageIndicator;
 

@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra.model;
+package com.alumraguide.umra.model;
 
 import java.util.ArrayList;
 import java.util.Collections;

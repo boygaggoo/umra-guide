@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra.model;
+package com.alumraguide.umra.model;
 
 public abstract class ORMObject {
 

@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra;
+package com.alumraguide.umra;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.SherlockFragment;
-import com.kdehairy.freelance.umra.model.Prayer;
+import com.alumraguide.umra.model.Prayer;
 
 public class PrayerFragment extends SherlockFragment {
 	

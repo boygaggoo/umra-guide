@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra;
+package com.alumraguide.umra;
 
 import java.util.ArrayList;
 
@@ -13,8 +13,8 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
-import com.kdehairy.freelance.umra.model.Repository;
-import com.kdehairy.freelance.umra.model.Toc;
+import com.alumraguide.umra.model.Repository;
+import com.alumraguide.umra.model.Toc;
 
 public class TOCActivity extends SherlockActivity implements OnClickListener {
 

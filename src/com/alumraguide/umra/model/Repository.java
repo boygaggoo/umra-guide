@@ -1,4 +1,4 @@
-package com.kdehairy.freelance.umra.model;
+package com.alumraguide.umra.model;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.kdehairy.freelance.umra.model.Toc;
+import com.alumraguide.umra.model.Toc;
 
 import android.content.Context;
 import android.database.Cursor;
