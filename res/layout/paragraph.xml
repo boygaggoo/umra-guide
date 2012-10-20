@@ -5,13 +5,17 @@
     android:clickable="false"
     android:focusable="false"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="2dp" >
 
     <com.kdehairy.widgets.RobotoTextView
         android:id="@+id/paragraph_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lineSpacingMultiplier="1.5"
-        android:textSize="@dimen/ContentTextSize" />
+        android:textSize="@dimen/ContentTextSize"
+        android:layout_gravity="right" />
 
 </FrameLayout>
